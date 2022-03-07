@@ -2,16 +2,17 @@ import json
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
-f = open("annotation-json\\annotation_test_2.json")
+f = open(r'annotation-json\250-320.json')
 data = json.load(f)
-
 
 
 for k in data.keys():
 
     filename = data[k]['filename']
+    print(filename)
     gt_lanes = data[k]['regions']
-    img = plt.imread(filename)
+    img = plt.imread(
+        r'H:\Thesis 400\1.Dataset_Creation\lane_frames\\'+filename)
     height, width, channel = img.shape
 
     #!Get all co-ordinates
@@ -33,7 +34,7 @@ for k in data.keys():
         cv2.polylines(img_vis, np.int32(
             [lane]), isClosed=False, color=(0, 255, 0), thickness=5)
     plt.imshow(img_vis)
-    cv2.imwrite('main.png', img_vis)
+    cv2.imwrite('output\\'+filename+'_main.png', img_vis)
     # plt.show()
 
     #!Generating gt image
@@ -42,8 +43,8 @@ for k in data.keys():
     for lane in gt_lanes_vis:
         cv2.polylines(gray_image, np.int32(
             [lane]), isClosed=False, color=(255, 255, 255), thickness=5)
-    plt.imshow(gray_image)
-    cv2.imwrite('gt.png', gray_image)
+    # plt.imshow(gray_image)
+    # cv2.imwrite('output\\'+filename+'_gt.png', gray_image)
     # plt.show()
 
-    break
+    # break
