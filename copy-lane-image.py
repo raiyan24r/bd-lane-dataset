@@ -4,9 +4,9 @@ import numpy as np
 import cv2
 import matplotlib.pyplot as plt
 import shutil
-directory = r'H:\Thesis 400\1.Dataset_Creation\Final\cut-visual'
+directory = r'H:\Thesis 400\1.Dataset_Creation\Final\visual'
 og = r'H:\Thesis 400\1.Dataset_Creation\lane_frames'
-dest = r'H:\Thesis 400\1.Dataset_Creation\Final\cut-og'
+dest = r'H:\Thesis 400\1.Dataset_Creation\Final\final-dataset-sanitized'
 
 for filename in os.scandir(directory):
     if filename.is_file():

@@ -8,12 +8,14 @@ import shutil
 # assign directory
 directory = r'H:\Thesis 400\1.Dataset_Creation\Final\annotations'
 thickness = 7
-
+move_dest = r'H:\Thesis 400\1.Dataset_Creation\Final\done-moved'
 # iterate over files in
 # that directory
 for filename in os.scandir(directory):
     if filename.is_file():
         print(filename.path)
+        annotation_filename = filename.name
+
         annotation_file = filename.path
         f = open(filename.path)
 
@@ -24,8 +26,8 @@ for filename in os.scandir(directory):
             filename = data[k]['filename']
             print(filename)
             gt_lanes = data[k]['regions']
-            img = plt.imread(
-                r'H:\Thesis 400\1.Dataset_Creation\lane_frames\\'+filename)
+            # img = plt.imread(
+            #     r'H:\Thesis 400\1.Dataset_Creation\lane_frames\\'+filename)
             img = cv2.imread(
                 r'H:\Thesis 400\1.Dataset_Creation\lane_frames\\'+filename)
             height, width, channel = img.shape
@@ -65,7 +67,7 @@ for filename in os.scandir(directory):
                         filename+'_gt.png', gray_image)
 
         f.close()
-
-        os.remove(annotation_file)
-
+        os.replace(annotation_file, move_dest+'\\zzz'+annotation_filename)
+        
+        # break
     # break
