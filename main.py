@@ -52,7 +52,7 @@ for filename in os.scandir(directory):
                     [lane]), isClosed=False, color=(0, 255, 0), thickness=thickness)
             plt.imshow(img_vis)
             cv2.imwrite(
-                r'H:\Thesis 400\1.Dataset_Creation\Final\visual\\'+filename+'_main.png', img_vis)
+                r'H:\Thesis 400\1.Dataset_Creation\Final\visual-revised\\'+filename+'_main.png', img_vis)
             # plt.show()
 
             #!Generating gt image
@@ -63,11 +63,11 @@ for filename in os.scandir(directory):
                 cv2.polylines(gray_image, np.int32(
                     [lane]), isClosed=False, color=(255, 255, 255), thickness=thickness)
             plt.imshow(gray_image)
-            cv2.imwrite(r'H:\Thesis 400\1.Dataset_Creation\Final\gt\\' +
+            cv2.imwrite(r'H:\Thesis 400\1.Dataset_Creation\Final\gt-revised\\' +
                         filename+'_gt.png', gray_image)
 
         f.close()
         os.replace(annotation_file, move_dest+'\\zzz'+annotation_filename)
-        
+
         # break
     # break

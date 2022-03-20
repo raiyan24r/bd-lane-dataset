@@ -4,7 +4,7 @@ import numpy as np
 import cv2
 import matplotlib.pyplot as plt
 import shutil
-directory = r'H:\Thesis 400\1.Dataset_Creation\Final\visual'
+directory = r'H:\Thesis 400\1.Dataset_Creation\Final\visual-revised'
 og = r'H:\Thesis 400\1.Dataset_Creation\lane_frames'
 dest = r'H:\Thesis 400\1.Dataset_Creation\Final\final-dataset-sanitized'
 

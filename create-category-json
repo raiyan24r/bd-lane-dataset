@@ -1,0 +1,20 @@
+import os
+
+from os.path import exists
+import json
+cat_path = r'H:\Thesis 400\1.Dataset_Creation\Final\time of day-lane category\\'
+dir_list = [directory for directory in os.listdir(
+    cat_path) if os.path.isdir(cat_path+directory)]
+print(dir_list)
+c = 0
+exit
+for folder in dir_list:
+    path = cat_path+folder
+    list = []
+    for filename in os.scandir(path):
+
+        if filename.is_file():
+            list.append(filename.name)
+            print(filename.name)
+            with open(r"H:\Thesis 400\1.Dataset_Creation\Final\time of day-lane category\\"+folder+".json", 'w') as f:
+                json.dump(list, f)
