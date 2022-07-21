@@ -10,4 +10,4 @@ The scripts performed various tasks like:
   <li>Generating a gif from all images in a gif</li>
    <li>Compressing gifs etc</li>
 </ul>
-![Lane Dataset](/lane-dataset.png?raw=true "Lane Dataset")
+![Lane Dataset](lane-dataset.png?raw=true "Lane Dataset")
